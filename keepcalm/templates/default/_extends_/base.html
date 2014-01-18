@@ -1,6 +1,6 @@
-{% load i18n inbox %}<!DOCTYPE html>
-<!--[if lt IE 9]>      <html lang="{% get_current_language %}" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="{% get_current_language %}" class="no-js"> <!--<![endif]-->
+{% load i18n %}<!DOCTYPE html>
+<!--[if lt IE 9]>      <html lang="{{ LANGUAGE_CODE }}" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="{{ LANGUAGE_CODE }}" class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,8 @@
     <body>
         <!--[if lt IE 7]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
-
+    {% block content %}
+    {% endblock %}
 
     </body>
 </html>

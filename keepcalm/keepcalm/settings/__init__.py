@@ -50,7 +50,7 @@ class Common(Statics, Configuration):
         'pipeline',
 
         'api',
-        'core',
+        'core'
     )
 
     MIDDLEWARE_CLASSES = (
@@ -147,7 +147,7 @@ class Common(Statics, Configuration):
     TEMPLATE_THEME = 'default'  # for easy refactoring
 
     TEMPLATE_DIRS = (
-        os.path.join(BASE_DIR, 'template', TEMPLATE_THEME)
+        os.path.join(BASE_DIR, '..', 'templates', TEMPLATE_THEME)
     )
 
 
