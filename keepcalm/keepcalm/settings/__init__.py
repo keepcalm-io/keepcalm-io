@@ -14,12 +14,11 @@ from configurations import Configuration, values
 from django.utils.translation import ugettext_lazy as _
 from .statics import Statics
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
 
 class Common(Statics, Configuration):
 
+    # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
     APP_NAME = 'keepcalm'
 
@@ -36,7 +35,7 @@ class Common(Statics, Configuration):
 
     ALLOWED_HOSTS = []
 
-    AUTH_USER_MODEL = 'core.models.User'
+    # AUTH_USER_MODEL = 'core.User'
 
     # Application definition
 
@@ -50,6 +49,7 @@ class Common(Statics, Configuration):
 
         'pipeline',
 
+        'core'
     )
 
     MIDDLEWARE_CLASSES = (
