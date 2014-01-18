@@ -36,7 +36,7 @@ class Common(Static, Configuration):
 
     ALLOWED_HOSTS = []
 
-    # AUTH_USER_MODEL = 'core.User'
+    AUTH_USER_MODEL = 'core.User'
 
     # Application definition
 
@@ -49,6 +49,8 @@ class Common(Static, Configuration):
         'django.contrib.staticfiles',
 
         'pipeline',
+        'rest_framework',
+        'rest_framework.authtoken',
 
         'api',
         'core'

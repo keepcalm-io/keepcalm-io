@@ -1,6 +1,9 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import status
+from core.models import Signal
 from .models import RedisStorage
+from .authentication import TokenAuthentication
 
 
 class RedisStorageMixin(object):
@@ -9,18 +12,27 @@ class RedisStorageMixin(object):
         self.redis = RedisStorage()
 
 
-class TrackSignalView(RedisStorageMixin, APIView):
+class TokenAuthMixin(object):
+    authentication_classes = (TokenAuthentication,)
 
-    def get(self, request, user_id, signal_id, ttl, max_retries, format=None):
+
+class TrackSignalView(TokenAuthMixin, RedisStorageMixin, APIView):
+
+
+    def get(self, request, signal_id, format='json'):
         """
         Tracks a signal
 
         TODO: launch a celery task to make it async
         """
-        return Response(self.redis.track_signal(user_id, signal_id, ttl, max_retries))
+        try:
+            signal = Signal.objects.get(id=signal_id)
+            return Response(self.redis.track_signal(user_id, signal_id, signal.expires_on, signal.max_retries))
+        except Signal.DoesNotExist:
+            return Response(False, status.HTTP_404_NOT_FOUND)
 
 
-class DeleteSignalView(RedisStorageMixin, APIView):
+class DeleteSignalView(TokenAuthMixin, RedisStorageMixin, APIView):
 
     def post(self, request, format=None):
         """
