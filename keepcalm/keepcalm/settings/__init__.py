@@ -107,13 +107,13 @@ class Common(Statics, Configuration):
 
     SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
-    CACHES = {
-        'default': {
-            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-            'KEY_PREFIX': '{}_'.format(APP_NAME),
-            'LOCATION': '127.0.0.1:11211',
-        }
-    }
+    # CACHES = {
+    #     'default': {
+    #         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+    #         'KEY_PREFIX': '{}_'.format(APP_NAME),
+    #         'LOCATION': '127.0.0.1:11211',
+    #     }
+    # }
 
 
     # Static files (CSS, JavaScript, Images)

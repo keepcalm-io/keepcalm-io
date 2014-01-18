@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser
 
 
 class User(AbstractBaseUser):
+    test = models.CharField(max_length=5, default='test')
     pass
 
 
