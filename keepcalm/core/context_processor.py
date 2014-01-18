@@ -2,10 +2,9 @@ from django.conf import settings
 
 
 def default(request):
-    """
-    :type request: HttpRequest
-    """
     return {
+        'template_theme': 'default',
+        'template_base': 'default.html',
         'settings': settings
     }
 
