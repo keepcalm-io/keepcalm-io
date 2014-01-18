@@ -49,7 +49,8 @@ class Common(Statics, Configuration):
 
         'pipeline',
 
-        'core'
+        'api',
+        'core',
     )
 
     MIDDLEWARE_CLASSES = (

@@ -41,7 +41,7 @@ class RedisStorage(object):
         signal_id = str(signal_id)
         signal_key = 'signal:' + user_id + ':' + signal_id
         pipe = self.connection.pipeline()
-        pipe.hmset('user:' + user_id, {signal_id + ':retr': 0, signal_id + ':max_retr', max_retries})
+        pipe.hmset('user:' + user_id, {signal_id + ':retr': 0, signal_id + ':max_retr': max_retries})
         pipe.set(signal_key, time.time())
         pipe.expire(signal_key, ttl)
         return all(pipe.execute())
@@ -63,7 +63,7 @@ class RedisStorage(object):
         pipe = self.connection.pipeline()
         pipe.hdel('user:' + user_id, signal_id + ':retr', signal_id + ':max_retr')
         pipe.delete('signal:' + user_id + ':' + 'signal_id')
-        return all(pipe.execute()))
+        return all(pipe.execute())
 
     def _scan_match(self, match):
         """
