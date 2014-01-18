@@ -168,7 +168,9 @@ class Dev(Common):
     """
     The in-development settings and the default configuration.
     """
-    pass
+    
+    REDIS_HOST = 'localhost'
+    REDIS_PORT = 6379
 
 
 class Prod(Common):
