@@ -13,5 +13,4 @@ redis>=2.9.0
 #django-otp>=0.2.2
 #django-two-factor-auth>=0.3.0
 django-pipeline>=1.3.20
-django-bower>=4.8.1
 django-crispy-forms>=1.4.0

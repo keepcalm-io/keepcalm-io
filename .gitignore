@@ -1,1 +1,49 @@
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+.ropeproject*
+*.db
+*.rdb
+*.sqlit*
+*.sqlite-journal
+*.old
+*.*~
+*.dlpart
+nohup.out
+
+
+# Compiled source #
+###################
+#*.mo
+*.pyc
+*.orig
+
+
+# IDE generated #
+#################
+.project
+.pydevproject
+.settings
+.coverage
+virtualenv
 .idea
+*.sublime-*
+*.*~
+*.swp
+*.swo
+
+# Project depedant #
+####################
+*.todo
+*_local.py
+node_modules/
+npm-debug.log
+bower_components/
+keepcalm/data/
+keepcalm/build/
+keepcalm/media/
+keepcalm/static/
+keepcalm/coverage/

@@ -1,0 +1,12 @@
+{
+  "name": "keepcalm-utils",
+  "description": "Node dependencies",
+  "version": "0.1.03",
+  "dependencies": {
+    "bower": "latest",
+    "less": "latest",
+    "uglify-js": "latest",
+    "cssmin": "latest"
+  }
+  "engines" : { "node" : ">=0.10.3" }
+}

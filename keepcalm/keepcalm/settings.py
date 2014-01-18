@@ -17,6 +17,8 @@ class Common(Configuration):
     # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
     BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+    APP_NAME = 'keepcalm'
+
     # Quick-start development settings - unsuitable for production
     # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -26,7 +28,7 @@ class Common(Configuration):
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
 
-    TEMPLATE_DEBUG = True
+    TEMPLATE_DEBUG = DEBUG
 
     ALLOWED_HOSTS = []
 
@@ -82,6 +84,16 @@ class Common(Configuration):
 
     STATIC_URL = '/static/'
 
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, APP_NAME, 'core', 'static'),
+        os.path.join(BASE_DIR, '..', 'bower_components'),
+    )
+
+    #STATICFILES_STORAGE =
+
+
 
 class Dev(Common):
     """
@@ -95,6 +107,7 @@ class Prod(Common):
     The in-production settings.
     """
     DEBUG = False
-    TEMPLATE_DEBUG = DEBUG
+
+    ALLOWED_HOSTS = ['localhost']
 
     SECRET_KEY = values.SecretValue()
