@@ -147,6 +147,8 @@ class Common(Statics, Configuration):
     TEMPLATE_THEME = 'default'  # for easy refactoring
 
     TEMPLATE_DIRS = (
+
+        os.path.join(BASE_DIR, '..', 'templates', 'extends'),
         os.path.join(BASE_DIR, '..', 'templates', TEMPLATE_THEME)
     )
 

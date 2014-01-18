@@ -13,7 +13,7 @@ Thumbs.db
 *.*~
 *.dlpart
 nohup.out
-__pycache__
+/**/__pycache__
 
 
 # Compiled source #
