@@ -7,6 +7,6 @@
     "less": "latest",
     "uglify-js": "latest",
     "cssmin": "latest"
-  }
+  },
   "engines" : { "node" : ">=0.10.3" }
 }

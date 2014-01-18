@@ -36,6 +36,7 @@ virtualenv
 *.swp
 *.swo
 
+
 # Project depedant #
 ####################
 *.todo
@@ -48,3 +49,5 @@ keepcalm/build/
 keepcalm/media/
 keepcalm/static/
 keepcalm/coverage/
+keepcalm/core/static/bower_components/
+keepcalm/core/static/styles/default.css

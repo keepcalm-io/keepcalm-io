@@ -1,4 +1,4 @@
-{% load i18n compress %}<!DOCTYPE html>
+{% load i18n compressed %}<!DOCTYPE html>
 <!--[if lt IE 9]>      <html lang="{{ LANGUAGE_CODE }}" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="{{ LANGUAGE_CODE }}" class="no-js"> <!--<![endif]-->
     <head>
@@ -7,9 +7,9 @@
         <title>{% block title %}{{ title|default:settings.APP_NAME }}{% endblock %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% compress_css 'default' %}
-        <!--[if lt IE 9]>{% compress_js 'leagacy' %}<!--[if gte IE 9]><!-->
-        {% compress_js 'app' %}
+        {% compressed_css 'app' %}
+        <!--[if lt IE 9]>{% compressed_js 'leagacy' %}<!--[if gte IE 9]><!-->
+        {% compressed_js 'app' %}
     </head>
     <body>
         <!--[if lt IE 7]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->

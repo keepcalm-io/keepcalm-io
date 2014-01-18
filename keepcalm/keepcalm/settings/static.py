@@ -28,7 +28,8 @@ class Static(object):
         "django.core.context_processors.media",
         "django.core.context_processors.static",
         "django.core.context_processors.tz",
-        "django.contrib.messages.context_processors.messages"
+        "django.contrib.messages.context_processors.messages",
+        'core.context_processor.default'
     )
 
     TEMPLATE_THEME = 'default'  # for easy refactoring
@@ -40,7 +41,7 @@ class Static(object):
 
     STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
-    NODE_BIN = os.path.join(BASE_DIR, '..', 'node_modules', '.bin')
+    NODE_BIN = os.path.join(BASE_DIR, '..', '..', 'node_modules', '.bin')
 
     PIPELINE_COMPILERS = (
         'pipeline.compilers.less.LessCompiler',
@@ -61,8 +62,8 @@ class Static(object):
     PIPELINE_CSS = {
         'app': {
             'source_filenames': (
-                'styles/app.less',
-                'font-awesome/css/font-awesome.css',
+                'styles/default.less',
+                # 'font-awesome/css/font-awesome.css',
             ),
             'output_filename': 'css/app.css',
             'variant': 'datauri',
@@ -71,30 +72,21 @@ class Static(object):
     PIPELINE_JS = {
         'app': {
             'source_filenames': (
-                'jquery/jquery.js',
-                'livequery/jquery.livequery.js',
-                'bootstrap/docs/assets/js/bootstrap.js',
-                'modernizr/modernizr.js',
-                'lodash/lodash.js',
+                'bower_components/jquery/jquery.js',
+                'bower_components/bootstrap/docs/assets/js/bootstrap.js',
+                'bower_components/modernizr/modernizr.js',
+                'bower_components/lodash/lodash.js',
 
-                # 'scripts/common/fixCsrf.js',
-                'scripts/common/firefly.js',
-                'scripts/common/digestUrl.js',
-                'scripts/common/message.js',
-                'scripts/common/ajaxSetup.js',
-                'scripts/common/delay.js',
-                'scripts/common/historyStack.js',
-                'scripts/common/fileUpload.js',
-                'scripts/common/dummy_gettext.js',
-                'scripts/binders.js',
-                'scripts/Main.js',
-                'scripts/fallbacks.js'
+                'scripts/**',
             ),
             'output_filename': 'js/app.js',
+            'extra_context': {
+                'async': True,
+            },
         },
         'legacy': {
             'source_filenames': (
-                'es5-shim/ iv/dist/html5shiv.js',
+                'shiv/dist/html5shiv.js',
             ),
             'output_filename': 'js/legacy.js'
         }

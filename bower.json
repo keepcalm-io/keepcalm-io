@@ -3,15 +3,15 @@
   "name": "keepcalm.io",
   "version": "0.1.10",
   "dependencies": {
-    "bootstrap": ">3.0.3 <4.0.0",
+    "bootstrap": ">=3.0.3 <4.0.0",
     "es5-shim": ">2.0.5",
-    "json3": ">3.2.6",
-    "jquery_ie": "jquery#>1.10.2 <2.0.0",
-    "jquery": ">2.0.3",
+    "json3": ">=3.2.6",
+    "jquery_ie": "jquery#>=1.10.2 <2.0.0",
+    "jquery": ">=2.0.3",
     "localStoragePolyfill": "https://gist.github.com/350433.git",
-    "lodash": ">2.4.1",
-    "modernizr": ">2.7.1",
-    "font-awesome": ">4.0.3",
-    "html5shiv": ">3.7.0"
+    "lodash": ">=2.4.1",
+    "modernizr": ">=2.7.1",
+    "font-awesome": ">=4.0.3",
+    "html5shiv": ">=3.7.0"
   }
 }
