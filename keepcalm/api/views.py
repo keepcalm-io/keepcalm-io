@@ -18,7 +18,6 @@ class TokenAuthMixin(object):
 
 class TrackSignalView(TokenAuthMixin, RedisStorageMixin, APIView):
 
-
     def get(self, request, signal_id, format='json'):
         """
         Tracks a signal
@@ -27,7 +26,7 @@ class TrackSignalView(TokenAuthMixin, RedisStorageMixin, APIView):
         """
         try:
             signal = Signal.objects.get(id=signal_id)
-            return Response(self.redis.track_signal(user_id, signal_id, signal.expires_on, signal.max_retries))
+            return Response(self.redis.track_signal(request.user.username, signal.id, signal.expires_on, signal.max_retries))
         except Signal.DoesNotExist:
             return Response(False, status.HTTP_404_NOT_FOUND)
 

@@ -1,15 +1,15 @@
-from django.db import models
-from django.contrib.auth.models import AbstractBaseUser
 from django.conf import settings
+from django.contrib.auth.models import AbstractUser
+from django.db import models
 from django.db.models.signals import post_save
 from rest_framework.authtoken.models import Token
 
-class User(AbstractBaseUser):
-    name = models.CharField(max_length=40, unique=True)
-    USERNAME_FIELD = 'name'
+
+class User(AbstractUser):
 
     class Meta:
         app_label = 'core'
+
 
 def create_user_token(sender, instance, created, **kwargs):
     if created:

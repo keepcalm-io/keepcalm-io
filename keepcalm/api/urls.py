@@ -1,6 +1,6 @@
 from django.conf.urls import url, patterns, include
 
-from .views import TrackSignalView, DeleteSignalView
+from .views import TrackSignalView
 
 urlpatterns = patterns('',
     url(r'^track/(?P<signal_id>\w+)/', TrackSignalView.as_view(), name="track_signal"),

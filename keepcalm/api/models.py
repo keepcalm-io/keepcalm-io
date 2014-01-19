@@ -143,4 +143,3 @@ class RedisStorage(object):
         pipe.set(signal_key, 'retry')
         pipe.expire(signal_key, ttl)
         pipe.execute()
-        
