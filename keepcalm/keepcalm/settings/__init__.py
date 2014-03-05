@@ -49,6 +49,7 @@ class Common(Static, Configuration):
         'django.contrib.staticfiles',
 
         'pipeline',
+        'django_extensions',
         'rest_framework',
         'rest_framework.authtoken',
 

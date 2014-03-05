@@ -1,7 +1,7 @@
-from django.contrib.auth import get_user_model
 from rest_framework import authentication
 from rest_framework import exceptions
 from rest_framework.authtoken.models import Token
+
 
 class TokenAuthentication(authentication.BaseAuthentication):
     def authenticate(self, request):
