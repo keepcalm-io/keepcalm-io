@@ -130,6 +130,10 @@ class Common(Static, Configuration):
 
     MANAGERS = ADMINS
 
+    KEEPCALM_PAYLOADS = [
+        'core.payloads.dummy.LogPayload',
+    ]
+
 
 class Dev(Common):
     """
